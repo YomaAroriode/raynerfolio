@@ -4,12 +4,14 @@
   themes: cupcake --default, forest --prefersdark;
 }
 
-html {
+html,
+body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .fade-word {
