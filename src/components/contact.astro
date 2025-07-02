@@ -1,0 +1,71 @@
+---
+import { Icon } from "astro-icon/components";
+
+const socials = [
+  {
+    name: "GitHub",
+    href: "https://github.com/YomaAroriode",
+    icon: "github",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/yomaaroriode",
+    icon: "linkedIn",
+  },
+  {
+    name: "Twitter",
+    href: "https://twitter.com/yomaaroriode",
+    icon: "x",
+  },
+  {
+    name: "Medium",
+    href: "https://medium.com/@yomaaroriode",
+    icon: "medium",
+  },
+];
+---
+
+<section
+  class="mx-auto mt-20 md:mt-40 px-4 max-w-3xl text-center"
+  id="contact"
+  data-aos="fade-up"
+>
+  <h2 class="mb-4 font-bold text-3xl md:text-4xl">Get In Touch</h2>
+  <p class="mb-8 text-gray-500 leading-relaxed">
+    Whether you have a question, want to work together, or just feel like saying
+    hi, my inbox is always open. I’ll try my best to get back to you!
+  </p>
+
+  <a
+    href="mailto:rayaroriode@gmail.com"
+    class="inline-flex items-center gap-2 bg-primary px-6 py-3 rounded-field font-semibold text-white hover:scale-105 transition-transform duration-200 ease-in-out"
+  >
+    Say Hello
+    <Icon name="arrow" />
+  </a>
+
+  <div class="flex justify-center items-center gap-5 mt-10">
+    {
+      socials.map(({ name, href, icon }) => (
+        <a
+          href={href}
+          target="_blank"
+          aria-label={name}
+          class="text-gray-500 hover:text-primary hover:scale-110 transition-transform"
+        >
+          <Icon name={icon} class="w-5 h-5" />
+        </a>
+      ))
+    }
+  </div>
+
+  <footer
+    class="mt-20 mb-8 text-gray-500 dark:text-gray-400 text-sm text-center select-none"
+  >
+    <p>
+      Thoughtfully designed in Figma and carefully coded in Astro by yours
+      truly.<br />
+      Styled with Tailwind CSS and deployed on Vercel.<br />
+    </p>
+  </footer>
+</section>

@@ -1,0 +1,54 @@
+---
+const currentPath = Astro.url.pathname;
+import { Icon } from "astro-icon/components";
+
+// Define menu items HTML string with template literals and conditional classes
+const menuItemsHtml = `
+  <li>
+    <a href="#projects" class="${currentPath.startsWith("/projects") ? "bg-base-200" : ""}">Projects</a>
+  </li>
+  <li>
+    <a href="#about" class="${currentPath === "/about" ? "bg-base-200" : ""}">About</a>
+  </li>
+  <li>
+    <a href="#contact" class="${currentPath === "/contact" ? "bg-base-200" : ""}">Contact</a>
+  </li>
+`;
+---
+
+<div class="mx-auto px-3 max-w-5xl navbar" role="navigation">
+  <div class="navbar-start">
+    <ul
+      class="hidden gap-3 rounded-field menu menu-vertical md:menu-horizontal"
+      set:html={menuItemsHtml}
+    />
+
+    <div class="md:hidden bg-base-200 rounded-field dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+        <Icon name="menu" />
+      </div>
+      <ul
+        tabindex="0"
+        class="z-1 bg-base-200 shadow-lg mt-3 p-2 rounded-box w-52 menu dropdown-content"
+        set:html={menuItemsHtml}
+      />
+    </div>
+  </div>
+
+  <div class="navbar-center">
+    <a href="/" class="font-black">Rayner®</a>
+  </div>
+
+  <div class="navbar-end">
+    <label class="text-base-content toggle">
+      <input type="checkbox" class="theme-controller" />
+      <Icon name="dark" />
+      <Icon name="light" />
+    </label>
+  </div>
+</div>
+
+<!-- back to the top -->
+<button id="backToTop" aria-label="Back to Top" class="bg-primary text-white">
+  <Icon name="top" class="w-6 h-6" />
+</button>

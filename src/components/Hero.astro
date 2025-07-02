@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout>
+  <section
+    class="flex flex-col justify-center items-center mt-20 md:mt-40 text-center"
+    data-aos="fade-down"
+  >
+    <div class="space-y-4">
+      <h1 class="font-extrabold text-4xl md:text-6xl transition duration-300">
+        Hi, I’m <span
+          class="bg-clip-text bg-gradient-to-r from-primary to-secondary text-transparent"
+          >Rayner</span
+        >.
+      </h1>
+
+      <p class="font-medium text-gray-500 text-2xl md:text-3xl">
+        I build <span
+          class="font-semibold text-primary animate-[pulse_1s_ease-in-out_infinite]"
+          >elegant</span
+        > and <span
+          class="font-semibold text-primary animate-[pulse_1s_ease-in-out_infinite]"
+          >efficient</span
+        > solutions for the web.
+      </p>
+    </div>
+
+    <div class="mt-6">
+      <a
+        href="/src/assets/resume.pdf"
+        class="inline-flex items-center gap-2 bg-primary px-5 py-2 rounded-field hover:ring-4 hover:ring-primary/30 font-semibold text-white hover:scale-105 transition-all duration-300 ease-in-out"
+      >
+        View Resume
+        <Icon name="view" />
+      </a>
+    </div>
+  </section>
+</Layout>
