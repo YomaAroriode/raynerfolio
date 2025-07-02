@@ -4,13 +4,16 @@
   themes: cupcake --default, forest --prefersdark;
 }
 
-html,
-body {
+html {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   scroll-behavior: smooth;
+}
+
+html,
+body {
   overflow-x: hidden;
 }
 
