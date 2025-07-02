@@ -2,7 +2,7 @@ import confetti from "canvas-confetti";
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".theme-controller");
-  const currentTheme = localStorage.getItem("theme") || "cupcake";
+  const currentTheme = localStorage.getItem("theme") || "forest";
   document.documentElement.setAttribute("data-theme", currentTheme);
   if (toggle) toggle.checked = currentTheme === "cupcake";
 
