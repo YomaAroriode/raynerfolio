@@ -45,13 +45,6 @@ npm run dev
 
 2. Open http://localhost:4321 in your browser.
 
-Build for Production
-bash
-Copy
-Edit
-npm run build
-npm run preview
-
 3. Deployment
    This site is deployed on Vercel with continuous integration.
 
