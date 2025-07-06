@@ -2,22 +2,19 @@ import confetti from "canvas-confetti";
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".theme-controller");
-  const currentTheme = localStorage.getItem("theme") || "forest";
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const currentTheme =
+    localStorage.getItem("theme") || (prefersDark ? "forest" : "cupcake");
+
   document.documentElement.setAttribute("data-theme", currentTheme);
+
   if (toggle) toggle.checked = currentTheme === "cupcake";
 
   toggle?.addEventListener("change", (e) => {
     const target = e.target;
-    const newTheme = target.checked ? "cupcake" : "dark";
+    const newTheme = target.checked ? "cupcake" : "forest";
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
-
-    confetti({
-      particleCount: 150,
-      spread: 100,
-      startVelocity: 30,
-      origin: { y: 0.6 },
-    });
   });
 });
 
